@@ -21,7 +21,6 @@ const Th = styled.th`
 export function FilteredWorkoutsTable() {
   const dispatch = useDispatch();
   const selected = useSelector(selectedWorkoutId);
-
   const { isLoading, isError } = useGetWorkoutsQuery();
   const workouts = useSelector(selectSortedWorkouts);
 

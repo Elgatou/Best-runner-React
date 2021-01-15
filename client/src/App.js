@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { FilteredWorkoutsTable } from "./features/workouts/FilteredWorkoutsTable";
-import { EditWorkoutForm } from "./features/workouts/EditWorkoutForm";
+import React from 'react';
+import styled from 'styled-components';
+import { FilteredWorkoutsTable } from './features/workouts/FilteredWorkoutsTable';
+import { EditWorkoutForm } from './features/workouts/EditWorkoutForm';
+import { Chart } from './features/workouts/Chart';
 
 const StyledApp = styled.div`
   display: flex;
@@ -20,9 +21,18 @@ const RightPanel = styled.div`
   margin: 0 50px;
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
 function App() {
   return (
     <div>
+      <Wrapper>
+        <Chart />
+      </Wrapper>
       <StyledApp>
         <FilteredWorkoutsTable />
         <RightPanel>
