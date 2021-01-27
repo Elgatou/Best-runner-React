@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const { checkSchema, validationResult } = require('express-validator');
 const app = require('express')();
+const PORT = process.env.PORT || 3012;
 
 let { workoutSchema, workouts } = require('./data.js');
 
@@ -60,6 +61,6 @@ app.delete('/workouts/:id', (req, res) => {
   res.send(workouts);
 });
 
-app.listen(3012, function () {
+app.listen(PORT, function () {
   console.log('API app started');
 });

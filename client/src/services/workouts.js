@@ -1,8 +1,11 @@
 import { createApi, fetchBaseQuery } from '@rtk-incubator/rtk-query';
 
+const baseUrl =
+  process.env.REACT_APP_PRODUCTION === 'true' ? 'https://best-runner-api.herokuapp.com/' : 'http://127.0.0.1:3012/';
+
 export const workoutsApi = createApi({
   reducerPath: 'workoutsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3012/' }),
+  baseQuery: fetchBaseQuery({ baseUrl }),
   entityTypes: ['Workouts'],
   endpoints: builder => ({
     getWorkouts: builder.query({
