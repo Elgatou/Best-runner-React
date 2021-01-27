@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@rtk-incubator/rtk-query';
 
 const baseUrl =
-  process.env.REACT_APP_PRODUCTION === 'true' ? 'https://best-runner-api.herokuapp.com/' : 'http://127.0.0.1:3012/';
+  process.env.NODE_ENV === 'production' ? 'https://best-runner-api.herokuapp.com/' : 'http://127.0.0.1:3012/';
 
 export const workoutsApi = createApi({
   reducerPath: 'workoutsApi',
